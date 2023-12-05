@@ -12,7 +12,7 @@ sudo parted "$DISK" -- mkpart Swap linux-swap 512MiB 4GiB
 sudo mkswap -L SWAP "$DISK"2
 sudo swapon "$DISK"2
 
-sudo parted "$DISK" -- mkpart primary 9GiB 100%
+sudo parted "$DISK" -- mkpart primary 4GiB 100%
 # encrypt
 sudo cryptsetup luksFormat "$DISK"3
 sudo cryptedsetup luksConfig "$DISK"3 --label NIXOS
