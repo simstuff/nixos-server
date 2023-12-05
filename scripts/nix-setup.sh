@@ -9,7 +9,7 @@ sudo mkfs.fat -F 32 -n BOOT  "$DISK"1
 # As I intend to use this VM on Proxmox, I will not encrypt the disk
 
 sudo parted "$DISK" -- mkpart Swap linux-swap 512MiB 4GiB
-sudo mkswap -L Swap "$DISK"2
+sudo mkswap -L SWAP "$DISK"2
 sudo swapon "$DISK"2
 
 sudo parted "$DISK" -- mkpart primary 9GiB 100%
