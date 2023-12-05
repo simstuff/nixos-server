@@ -15,7 +15,7 @@ sudo swapon "$DISK"2
 sudo parted "$DISK" -- mkpart primary 4GiB 100%
 # encrypt
 sudo cryptsetup luksFormat "$DISK"3
-sudo cryptedsetup luksConfig "$DISK"3 --label NIXOS
+sudo cryptsetup luksConfig "$DISK"3 --label NIXOS
 sudo cryptsetup luksOpen "$DISK"3 crypted 
 
 sudo mkfs.btrfs -L Butter "$MAPPER"
